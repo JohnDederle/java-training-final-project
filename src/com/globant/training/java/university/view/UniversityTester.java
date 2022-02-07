@@ -14,38 +14,38 @@ public class UniversityTester {
 		
 		University globant = new University();
 		
-		Teacher teacher1 = new FullTimeTeacher("Leif Nagell", 5000, 34);
-		Teacher teacher2 = new FullTimeTeacher("Ted Skjellum", 5000, 33);
-		Teacher teacher3 = new PartTimeTeacher("Carl-Michael Eide", 2500, 25);
-		Teacher teacher4 = new PartTimeTeacher("Rune Eriksen", 2000, 20);
+		Teacher leifNagell = new FullTimeTeacher("Leif Nagell", 5000, 34);
+		Teacher tedSkjellum = new FullTimeTeacher("Ted Skjellum", 5000, 33);
+		Teacher carlMichaelEide = new PartTimeTeacher("Carl-Michael Eide", 2500, 25);
+		Teacher runeEriksen = new PartTimeTeacher("Rune Eriksen", 2000, 20);
 		
-		Collections.addAll(globant.getTeachers(), teacher1, teacher2, teacher3, teacher4);
+		Collections.addAll(globant.getTeachers(), leifNagell, tedSkjellum, carlMichaelEide, runeEriksen);
 		
-		Student student1 = new Student("John Dederle", 1030528144, 35);
-		Student student2 = new Student("Julian Bautista", 80235789, 36);
-		Student student3 = new Student("Rodolfo Arevalo", 75578953, 41);
-		Student student4 = new Student("Jonathan Rodriguez", 81345678, 37);
-		Student student5 = new Student("William Restrepo", 1035678321, 31);
-		Student student6 = new Student("Camilo Rodriguez", 1038207496, 33);
+		Student johnDederle = new Student("John Dederle", 1030528144, 35);
+		Student julianBautista = new Student("Julian Bautista", 80235789, 36);
+		Student rodolfoArevalo = new Student("Rodolfo Arevalo", 75578953, 41);
+		Student jonathanRodriguez = new Student("Jonathan Rodriguez", 81345678, 37);
+		Student williamRestrepo = new Student("William Restrepo", 1035678321, 31);
+		Student camiloRodriguez = new Student("Camilo Rodriguez", 1038207496, 33);
 		
-		Collections.addAll(globant.getStudents(), student1, student2, student3, student4, student5, student6);
+		Collections.addAll(globant.getStudents(), johnDederle, julianBautista, rodolfoArevalo, jonathanRodriguez, williamRestrepo, camiloRodriguez);
 		
-		List<Student> registeredCourse1 = new ArrayList<Student>();
-		List<Student> registeredCourse2 = new ArrayList<Student>();
-		List<Student> registeredCourse3 = new ArrayList<Student>();
-		List<Student> registeredCourse4 = new ArrayList<Student>();
+		List<Student> studentsMusicFundamentals = new ArrayList<Student>();
+		List<Student> studentsMusicTechniques = new ArrayList<Student>();
+		List<Student> studentsInstruments = new ArrayList<Student>();
+		List<Student> studentsProduction = new ArrayList<Student>();
 		
-		Collections.addAll(registeredCourse1, student1, student2, student3, student4);
-		Collections.addAll(registeredCourse2, student1, student2, student4, student5);
-		Collections.addAll(registeredCourse3, student1, student3, student5, student6);
-		Collections.addAll(registeredCourse4, student1, student2, student4, student5);
+		Collections.addAll(studentsMusicFundamentals, johnDederle, julianBautista, rodolfoArevalo, jonathanRodriguez);
+		Collections.addAll(studentsMusicTechniques, johnDederle, julianBautista, jonathanRodriguez, williamRestrepo);
+		Collections.addAll(studentsInstruments, johnDederle, rodolfoArevalo, williamRestrepo, camiloRodriguez);
+		Collections.addAll(studentsProduction, johnDederle, julianBautista, jonathanRodriguez, williamRestrepo);
 		
-		Course course1 = new Course("Music Fundamentals", 101, registeredCourse1, teacher1);
-		Course course2 = new Course("Music Techniques", 102, registeredCourse2, teacher2);
-		Course course3 = new Course("Instruments", 103, registeredCourse3, teacher3);
-		Course course4 = new Course("Production", 104, registeredCourse4, teacher4);
+		Course musicFundamentals = new Course("Music Fundamentals", 101, studentsMusicFundamentals, leifNagell);
+		Course musicTechniques = new Course("Music Techniques", 102, studentsMusicTechniques, tedSkjellum);
+		Course instruments = new Course("Instruments", 103, studentsInstruments, carlMichaelEide);
+		Course production = new Course("Production", 104, studentsProduction, runeEriksen);
 		
-		Collections.addAll(globant.getCourses(), course1, course2, course3, course4);
+		Collections.addAll(globant.getCourses(), musicFundamentals, musicTechniques, instruments, production);
 		
 		int option;
 		Scanner entry = new Scanner(System.in);
